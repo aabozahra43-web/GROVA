@@ -1015,28 +1015,26 @@ footer .bottom {
 
 @media (max-width: 768px) {
   :root {
-    --section-pad: 4.5rem 1.4rem;
+    --section-pad: 4rem 1.5rem;
   }
   nav { padding: 1rem 1.5rem; }
 
-  .hero-content { padding: 6rem 1.5rem 3rem; gap: 2rem; }
-  .hero-image img { max-width: 260px; }
+  .hero-content { padding: 7rem 1.5rem 3rem; gap: 2.5rem; }
+  .hero-image img { max-width: 85%; }
   #hero .ctas { flex-direction: column; align-items: stretch; }
 
-  #fixed-cards .grid { grid-template-columns: 1fr; gap: 1.2rem; }
-  #fixed-cards { padding: 1.5rem 1rem; }
+  #features .grid { grid-template-columns: 1fr; gap: 1.5rem; }
 
-  #section-three { padding-bottom: 5rem; }
+  #section-three { padding-bottom: 4rem; }
 
-  .stats-inner { gap: 2rem; }
+  .stats-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .stat-divider { display: none; }
-  .stats-inner { flex-direction: column; }
 
   #menu .menu-grid { grid-template-columns: 1fr; }
-  .menu-tabs { justify-content: center; }
+  .menu-tabs { justify-content: center; gap: 0.5rem; }
 
   .hiw-steps { flex-direction: column; align-items: center; }
-  .hiw-connector { transform: rotate(90deg); padding: 0.5rem 0; }
+  .hiw-connector { transform: rotate(90deg); padding: 1rem 0; }
 
   .testimonials-grid { grid-template-columns: 1fr; }
   .testimonials-grid .testimonial-card:last-child {
@@ -1045,14 +1043,22 @@ footer .bottom {
 
   .newsletter-form { flex-direction: column; }
 
-  footer .foot-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer .foot-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
   .marquee-item { width: 220px; height: 160px; }
 }
 
 @media (max-width: 480px) {
-  #hero h1 { font-size: 2rem; }
-  .hero-image img { max-width: 200px; }
+  #hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero-text .sub { font-size: 0.95rem; }
+  .hero-image img { max-width: 90%; }
   #hero .code-box { display: none; }
+  
+  .stats-inner { grid-template-columns: 1fr; gap: 2rem; }
   .stat-item { min-width: auto; }
+  
+  .menu-tabs .tab { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+  
+  .showcase-price { font-size: 2rem; }
+  .section-header h2 { font-size: 2rem; }
 }
