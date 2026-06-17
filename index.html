@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GROVA — Gourmet Burgers & Crispy Chicken</title>
+  <meta name="description" content="GROVA — Premium Gourmet Burgers & Crispy Chicken. Fire-grilled. Fresh daily. Order now." />
+  <meta name="keywords" content="gourmet burgers, crispy chicken, fire-grilled, fast food, premium restaurant" />
+  <meta name="author" content="GROVA" />
+  <meta property="og:title" content="GROVA — Gourmet Burgers & Crispy Chicken" />
+  <meta property="og:description" content="Premium Gourmet Burgers & Crispy Chicken. Fire-grilled. Fresh daily." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       FIXED BACKDROP — Animated gradient background
+  ============================================================ -->
+  <div id="backdrop">
+    <div class="grain"></div>
+    <div class="overlay"></div>
+  </div>
+
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+      </div>
+      <span class="logo">GR<em>O</em>VA</span>
+    </div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button id="order-now-btn" class="order-btn" onclick="showToast('Opening order page…')">Order Now</button>
+      <div class="hamburger" id="hamburger-btn">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MOBILE MENU OVERLAY
+  ============================================================ -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#menu" class="mobile-link">Menu</a>
+      <a href="#how-it-works" class="mobile-link">How It Works</a>
+      <a href="#testimonials" class="mobile-link">Reviews</a>
+      <a href="#footer" class="mobile-link">Contact</a>
+      <button class="order-btn mobile-order-btn" onclick="showToast('Opening order page…')">Order Now</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <div id="content">
+
+<!-- ========== SECTION: HERO ========== -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="badge"><span class="dot"></span> Now Open — Free Delivery Over $25</div>
+          <h1>
+            Taste flavour <span class="accent">fire-grilled</span> to perfection.
+          </h1>
+          <p class="sub">
+            Gourmet burgers and crispy chicken, crafted fresh daily.
+            Every bite is a bold, smoky experience worth chasing.
+          </p>
+          <div class="ctas">
+            <a href="#menu" id="explore-menu-btn" class="cta-btn">Explore Menu <span>&rarr;</span></a>
+            <div class="code-box">
+              <div class="dot-row"><span></span><span></span><span></span></div>
+              <span class="label">4.9★ rated · 50K+ orders served</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-img-glow"></div>
+          <img src="images/signature-smash.png" alt="GROVA Signature Smash Burger" id="hero-burger-img" />
+        </div>
+      </div>
+      <div class="bounce-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+      </div>
+    </section>
+
+<!-- ========== SECTION: GALLERY MARQUEE ========== -->
+    <section id="gallery">
+      <div class="gallery-inner">
+        <div class="section-header center">
+          <p class="eyebrow">Gallery</p>
+          <h2>FIRE <span class="accent">IN ACTION</span></h2>
+        </div>
+        <div class="marquee-wrapper">
+          <div class="marquee-track">
+            <div class="marquee-item"><img src="images/signature-smash.png" alt="Signature Smash" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/inferno-burger.png" alt="Inferno Burger" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/crispy-chicken.png" alt="Crispy Chicken" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/truffle-fries.png" alt="Truffle Fries" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/nashville-tenders.png" alt="Nashville Tenders" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/caramel-shake.png" alt="Caramel Shake" loading="lazy" /></div>
+            <!-- Duplicated for seamless loop -->
+            <div class="marquee-item"><img src="images/signature-smash.png" alt="Signature Smash" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/inferno-burger.png" alt="Inferno Burger" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/crispy-chicken.png" alt="Crispy Chicken" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/truffle-fries.png" alt="Truffle Fries" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/nashville-tenders.png" alt="Nashville Tenders" loading="lazy" /></div>
+            <div class="marquee-item"><img src="images/caramel-shake.png" alt="Caramel Shake" loading="lazy" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: STATS COUNTER ========== -->
+    <section id="stats">
+      <div class="stats-inner">
+        <div class="stat-item" data-target="50000" data-suffix="+">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Orders Served</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" data-target="4.9" data-suffix="★" data-decimal="true">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Customer Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" data-target="22" data-suffix=" min">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Avg. Delivery</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" data-target="12" data-suffix="+">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Locations</span>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: WHY GROVA (Features) ========== -->
+    <section id="features">
+      <div class="features-inner">
+        <div class="grid">
+          <div class="feature-card reveal">
+            <div class="icon">🔥</div>
+            <h3>Fire-Grilled Daily</h3>
+            <p>Every patty is seared over an open flame for that signature smoky char — never frozen, never microwaved.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">🌿</div>
+            <h3>Fresh, Not Frozen</h3>
+            <p>We source produce daily from local growers so every bite tastes like it was made minutes ago — because it was.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="icon">⚡</div>
+            <h3>Hot in 22 Minutes</h3>
+            <p>Our kitchen-to-door promise: piping hot food delivered fast, with thermal packaging that locks in the heat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: MENU ========== -->
+    <section id="menu">
+      <div class="menu-inner">
+        <div class="section-header">
+          <p class="eyebrow">Our Menu</p>
+          <h2>BOLD <span class="accent">FLAVOURS</span>, EVERY BITE</h2>
+          <p class="menu-sub">Handcrafted with the freshest ingredients — our menu delivers restaurant quality at your door.</p>
+        </div>
+
+        <!-- Menu Filter Tabs -->
+        <div class="menu-tabs" id="menu-tabs">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="burgers">Burgers</button>
+          <button class="tab" data-filter="chicken">Chicken</button>
+          <button class="tab" data-filter="sides">Sides</button>
+          <button class="tab" data-filter="drinks">Drinks</button>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+
+          <!-- Card 1: Signature Smash -->
+          <article class="menu-card" data-category="burgers" id="card-signature-smash">
+            <div class="swatch">
+              <img src="images/signature-smash.png" alt="GROVA Signature Smash Burger" loading="lazy" />
+              <span class="card-badge">Best Seller</span>
+            </div>
+            <div class="body">
+              <p class="cat">Burgers</p>
+              <h3>GROVA SIGNATURE SMASH</h3>
+              <p>Double smash patty, aged cheddar, caramelised onions, pickles & house sauce on a toasted brioche bun.</p>
+              <div class="footer">
+                <span class="price"><span>$</span>14.99</span>
+                <button class="add-btn" id="add-signature-smash" onclick="addToCart(event,'GROVA Signature Smash')">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Inferno Beef -->
+          <article class="menu-card" data-category="burgers" id="card-inferno-burger">
+            <div class="swatch">
+              <img src="images/inferno-burger.png" alt="Inferno Beef Burger" loading="lazy" />
+              <span class="card-badge hot">🔥 Hot</span>
+            </div>
+            <div class="body">
+              <p class="cat">Burgers</p>
+              <h3>INFERNO BEEF BURGER</h3>
+              <p>Thick beef patty, habanero aioli, jalapeños, pepper jack cheese & crispy fried shallots.</p>
+              <div class="footer">
+                <span class="price"><span>$</span>13.49</span>
+                <button class="add-btn" id="add-inferno-burger" onclick="addToCart(event,'Inferno Beef Burger')">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Crispy Cloud Chicken -->
+          <article class="menu-card" data-category="chicken" id="card-crispy-chicken">
+            <div class="swatch">
+              <img src="images/crispy-chicken.png" alt="Crispy Cloud Chicken" loading="lazy" />
+            </div>
+            <div class="body">
+              <p class="cat">Crispy Chicken</p>
+              <h3>CRISPY CLOUD CHICKEN</h3>
+              <p>Buttermilk-marinated chicken breast, double-fried to cloud-light crunch, honey mustard slaw.</p>
+              <div class="footer">
+                <span class="price"><span>$</span>12.99</span>
+                <button class="add-btn" id="add-crispy-chicken" onclick="addToCart(event,'Crispy Cloud Chicken')">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Truffle Fries -->
+          <article class="menu-card" data-category="sides" id="card-truffle-fries">
+            <div class="swatch">
+              <img src="images/truffle-fries.png" alt="Truffle Parmesan Fries" loading="lazy" />
+            </div>
+            <div class="body">
+              <p class="cat">Sides</p>
+              <h3>TRUFFLE PARMESAN FRIES</h3>
+              <p>Hand-cut golden fries tossed in truffle oil, aged Parmesan and fresh herbs.</p>
+              <div class="footer">
+                <span class="price"><span>$</span>7.49</span>
+                <button class="add-btn" id="add-truffle-fries" onclick="addToCart(event,'Truffle Parmesan Fries')">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Nashville Hot Tenders -->
+          <article class="menu-card" data-category="chicken" id="card-nashville-tenders">
+            <div class="swatch">
+              <img src="images/nashville-tenders.png" alt="Nashville Hot Tenders" loading="lazy" />
+              <span class="card-badge hot">🔥 Spicy</span>
+            </div>
+            <div class="body">
+              <p class="cat">Crispy Chicken</p>
+              <h3>NASHVILLE HOT TENDERS</h3>
+              <p>Five jumbo chicken tenders in our Nashville hot spice rub, served with cooling ranch dip.</p>
+              <div class="footer">
+                <span class="price"><span>$</span>11.99</span>
+                <button class="add-btn" id="add-nashville-tenders" onclick="addToCart(event,'Nashville Hot Tenders')">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Salted Caramel Shake -->
+          <article class="menu-card" data-category="drinks" id="card-caramel-shake">
+            <div class="swatch">
+              <img src="images/caramel-shake.png" alt="Salted Caramel Shake" loading="lazy" />
+              <span class="card-badge new">New</span>
+            </div>
+            <div class="body">
+              <p class="cat">Drinks</p>
+              <h3>SALTED CARAMEL SHAKE</h3>
+              <p>Velvety thick shake blended with real caramel, Himalayan salt and whipped cream.</p>
+              <div class="footer">
+                <span class="price"><span>$</span>6.49</span>
+                <button class="add-btn" id="add-caramel-shake" onclick="addToCart(event,'Salted Caramel Shake')">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: FEATURED SHOWCASE ========== -->
+    <section id="showcase">
+      <div class="showcase-inner">
+        <div class="showcase-left">
+          <div class="showcase-img-wrapper">
+            <img src="images/inferno-burger.png" alt="Inferno Beef Burger Showcase" loading="lazy" />
+            <div class="showcase-img-badge">Chef's Pick</div>
+          </div>
+        </div>
+        <div class="showcase-right">
+          <p class="eyebrow">Featured</p>
+          <h2>THE <span class="accent">INFERNO</span> EXPERIENCE</h2>
+          <p class="showcase-desc">
+            Our master chefs spent 6 months perfecting this recipe. A thick-cut Angus beef patty, 
+            seared at 600°F and topped with house-made habanero aioli, pickled jalapeños, 
+            and double-layered pepper jack cheese. It's not just a burger — it's an event.
+          </p>
+          <ul class="showcase-features">
+            <li>
+              <span class="feature-icon">🥩</span>
+              <div>
+                <strong>100% Angus Beef</strong>
+                <span>Premium cuts, never frozen</span>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">🌶️</span>
+              <div>
+                <strong>House-Made Habanero Aioli</strong>
+                <span>Our secret recipe since 2019</span>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">🧀</span>
+              <div>
+                <strong>Double Pepper Jack</strong>
+                <span>Melted to golden perfection</span>
+              </div>
+            </li>
+          </ul>
+          <div class="showcase-cta">
+            <span class="showcase-price"><span>$</span>13.49</span>
+            <button class="cta-btn" id="add-inferno-showcase" onclick="addToCart(event,'Inferno Beef Burger')">Add to Order <span>&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: TESTIMONIALS ========== -->
+    <section id="testimonials">
+      <div class="testimonials-inner">
+        <div class="section-header center">
+          <p class="eyebrow">What People Say</p>
+          <h2>LOVED BY <span class="accent">THOUSANDS</span></h2>
+          <p class="menu-sub center">Don't just take our word for it — hear from real GROVA fans.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card" id="testimonial-1">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Best burger I've ever had, hands down. The Signature Smash is absolute perfection — the caramelised onions and house sauce combo is otherworldly."</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">JM</div>
+              <div>
+                <strong>James Mitchell</strong>
+                <span>Verified Customer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card featured" id="testimonial-2">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"I order from GROVA at least twice a week. The Nashville Hot Tenders are dangerously addictive, and the delivery is always lightning fast. This is the real deal."</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">SK</div>
+              <div>
+                <strong>Sarah Kim</strong>
+                <span>Verified Customer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" id="testimonial-3">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Finally, a place that takes fried chicken seriously. The Crispy Cloud Chicken rivals anything I've had in Nashville. And those truffle fries? Chef's kiss."</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">DL</div>
+              <div>
+                <strong>David Lee</strong>
+                <span>Verified Customer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: HOW IT WORKS ========== -->
+    <section id="how-it-works">
+      <div class="hiw-inner">
+        <div class="section-header center">
+          <p class="eyebrow">How It Works</p>
+          <h2>FROM GRILL TO <span class="accent">YOUR DOOR</span></h2>
+          <p class="menu-sub center">Three simple steps to gourmet happiness — it's never been easier.</p>
+        </div>
+
+        <div class="hiw-steps">
+          <div class="hiw-step" data-step="01">
+            <div class="step-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"/></svg>
+            </div>
+            <h3>Choose Your Meal</h3>
+            <p>Browse our curated menu of gourmet burgers, crispy chicken, sides and shakes.</p>
+          </div>
+          <div class="hiw-connector">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </div>
+          <div class="hiw-step" data-step="02">
+            <div class="step-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>
+            </div>
+            <h3>We Fire-Grill It</h3>
+            <p>Our chefs prepare your order fresh over open flames — no shortcuts, no compromises.</p>
+          </div>
+          <div class="hiw-connector">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </div>
+          <div class="hiw-step" data-step="03">
+            <div class="step-icon">
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+            </div>
+            <h3>Delivered Hot</h3>
+            <p>Thermal-sealed packaging keeps every bite piping hot. Average delivery: just 22 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ========== SECTION: BRAND REVEAL ========== -->
+    <section id="section-three">
+      <div class="inner" id="section-three-inner">
+        <p>Introducing</p>
+        <h2>GR<span class="accent">O</span>VA</h2>
+        <p class="tagline">Where every flame tells a story</p>
+        <a href="#menu" class="order-cta">See Full Menu</a>
+      </div>
+    </section>
+
+<!-- ========== SECTION: NEWSLETTER / CTA ========== -->
+    <section id="newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-content">
+          <h2>STAY IN THE <span class="accent">LOOP</span></h2>
+          <p>Join our list and get exclusive deals, new menu drops, and a <strong>free side</strong> on your first order.</p>
+          <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" id="newsletter-email" placeholder="Enter your email" required autocomplete="email" />
+            <button type="submit" id="newsletter-submit">Subscribe</button>
+          </form>
+          <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#content -->
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="foot-inner">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-row">
+            <div class="brand-icon" style="width:32px;height:32px;border-radius:8px;background:var(--accent);display:grid;place-items:center;color:#050302;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+            </div>
+            <span class="logo">GROVA</span>
+          </div>
+          <p class="desc">Premium gourmet burgers & crispy chicken, fire-grilled fresh and delivered hot to your door.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter/X">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="TikTok">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.77a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#menu">Full Menu</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Find Us</h4>
+          <ul>
+            <li><a href="#">📍 Downtown — 12 Flame St</a></li>
+            <li><a href="#">📞 +1 (555) 264-2539</a></li>
+            <li><a href="#">✉️ hello@grovaburgers.com</a></li>
+          </ul>
+          <div class="hours-badge">
+            <span class="hours-dot"></span>
+            Open Now · 11AM – 11PM
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <p>© 2025 GROVA Gourmet. All rights reserved.</p>
+        <p>Template by Premium Templates Co.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       TOAST NOTIFICATION
+  ============================================================ -->
+  <div class="toast" id="toast">
+    <div class="toast-icon">🛒</div>
+    <div>
+      <strong id="toastTitle">Added to Cart!</strong>
+      <span id="toastSub">We'll have it ready soon 🔥</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCROLL TO TOP BUTTON
+  ============================================================ -->
+  <button id="scroll-top-btn" class="scroll-top" aria-label="Scroll to top">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
